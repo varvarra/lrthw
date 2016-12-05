@@ -7,7 +7,7 @@ if door == "1"
   puts "There's a giant bear here eating a cheese cake.  What do you do?"
   puts "1. Take the cake."
   puts "2. Scream at the bear."
-  puts "3. Smile to the bear."
+  puts "3. Smile to the bear." # adding a new door
 
   print "> "
   bear = $stdin.gets.chomp
@@ -17,7 +17,7 @@ if door == "1"
   elsif bear  == "2"
     puts "The bear eats your legs off. Good job!"
   else
-    puts "Well, doing %s is probably better. Bear runs away."
+    puts "Well, doing %s is probably better. Bear runs away." % bear
   end
 
 elsif door == "2"
@@ -34,7 +34,7 @@ elsif door == "2"
   else
     puts "The insanity rots your eyes into a pool of muck.  Good job!"
   end
-
+# new elsif for the new added door
 elsif door == "3"
   puts "The bear turns into a cute paddington bear!"
   puts "1. Hug a bear."
