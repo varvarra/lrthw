@@ -6,8 +6,8 @@ def gold_room
 # checking if the input is an integer
 # it was like this - a bug - choice.include?("0") || choice.include?("1") - but not all the numbers include 0 or1
 # the following if statement would not allow string to pass as the string turned into an integer will return 0 and then "0", which is not equal to the original input
-  if choice.to_i.to_s == choice # or use regex if choice =~ /[0-9]/
-# v =~ /\A[-+]?[0-9]*\.?[0-9]+\Z/ checking if its a number - anothe option
+  if choice.to_i.to_s == choice # or use regex
+# v =~ /\A[-+]?[0-9]*\.?[0-9]+\Z/ checking if its a number - another option
     how_much = choice.to_i
   else
     dead("Man, learn to type a number.")
