@@ -3,9 +3,9 @@ def gold_room
 
   print "> "
   choice = $stdin.gets.chomp
-# checking if the includeput is an integer
-# was like this - a bug - choice.include?("0") || choice.include?("1")
-# This would return false since it is not the same as the original string.
+# checking if the input is an integer
+# it was like this - a bug - choice.include?("0") || choice.include?("1") - but not all the numbers include 0 or1
+# the following if statement would not allow string to pass as the string turned into an integer will return 0 and then "0", which is not equal to the original input
   if choice.to_i.to_s == choice # or use regex if choice =~ /[0-9]/
 # v =~ /\A[-+]?[0-9]*\.?[0-9]+\Z/ checking if its a number - anothe option
     how_much = choice.to_i
@@ -19,7 +19,7 @@ def gold_room
 # new option added
   else
     puts "That's a lot! Can you even carry it?"
-    puts "Mayby put some back? Yes or No?"
+    puts "Maybe put some back? Yes or No?"
 
     put_back = $stdin.gets.chomp
 
@@ -48,7 +48,6 @@ def bear_room
       dead("The bear looks at you then slaps you")
     elsif choice == "taunt bear" && !bear_moved
       puts "This bear has moved from the door. you can go through it."
-      # the loop discontinues and another choice of opening a door can't be made without it
       bear_moved = true
     elsif choice == "taunt bear" && bear_moved
       dead("The bear gets pissed off and chews your leg off.")
